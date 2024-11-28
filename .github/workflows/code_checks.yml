@@ -39,5 +39,17 @@ jobs:
       - name: Code complexity
         run: poetry run complexipy .
 
-      - name: Run doctests
+      - name: Run tests
         run: poetry run pytest
+
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: htmlcov/
+
+      - name: Upload Pytest Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: pytest-results
+          path: pytest-results.xml
