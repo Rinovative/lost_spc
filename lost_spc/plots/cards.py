@@ -249,7 +249,7 @@ class m_S:
 
     def fit(self, X, Y):
         cov = calculate_cov(X, Y)
-        control_limits = calculate_control_limits(X, chart_type="S", z=self.z, cov=cov)
+        control_limits = calculate_control_limits(X, chart_type="m_S", z=self.z, cov=cov)
         self.UCL = control_limits["UCL"]
         self.CL = control_limits["CL"]
         self.LCL = control_limits["LCL"]

@@ -88,7 +88,7 @@ def calculate_control_limits(
         ucl = st.chi2.ppf(1 - alpha, p)
         cl = ucl / 2
         lcl = 0
-    elif chart_type == "S":
+    elif chart_type == "m_S":
         cov = kwargs.get("cov", 2)
         b1, b2 = calc_b(m, 2)
         ucl = (np.linalg.det(cov) / b1) * (b1 + 3 * b2**0.5)
